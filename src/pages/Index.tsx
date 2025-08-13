@@ -7,6 +7,7 @@ import ERPSection from "@/components/ERPSection";
 import PartnersSection from "@/components/PartnersSection";
 import HowItWorks from "@/components/HowItWorks";
 import Industries from "@/components/Industries";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -15,13 +16,14 @@ const Index = () => {
       <main>
         <HeroSection />
         <TrustLogos />
-        <WhoWeAre />
         <ServicesOverview />
+        <WhoWeAre />
         <ERPSection />
         <PartnersSection />
         <HowItWorks />
         <Industries />
       </main>
+      <Footer />
     </div>
   );
 };

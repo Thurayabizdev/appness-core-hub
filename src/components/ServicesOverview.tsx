@@ -32,57 +32,41 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our Services
+        <div className="text-center space-y-6 mb-20">
+          <div className="inline-flex items-center space-x-2 bg-muted border border-border rounded-full px-4 py-2">
+            <span className="text-sm font-medium text-muted-foreground">Our Services</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+            Built for <span className="text-primary">ERP</span>, styled with <span className="text-primary">AI</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Appness Technology empowers businesses to leverage technology, optimize operations, and achieve their goals efficiently.
+            Flexible components, consistent UI, quick development, easy integration.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card
+              <div
                 key={service.title}
-                className="group hover:shadow-medium transition-all duration-300 border-primary/10 hover:border-primary/20 bg-card-gradient"
+                className="group p-8 rounded-2xl bg-card border border-border hover:shadow-medium transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardHeader>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-feature-gradient rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                      {service.subtitle && (
-                        <p className="text-sm text-primary font-medium">{service.subtitle}</p>
-                      )}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base mb-6">
-                    {service.description}
-                  </CardDescription>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="feature" size="sm" className="w-full">
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
+                <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-soft">
+                  <IconComponent className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {service.description}
+                </p>
+              </div>
             );
           })}
         </div>

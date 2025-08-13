@@ -14,38 +14,53 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-lg border-b border-border z-50">
+    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-hero-gradient bg-clip-text text-transparent">
-              Appness
-            </h1>
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-soft">
+              <span className="text-white font-bold text-sm">A</span>
+            </div>
+            <span className="text-xl font-semibold text-foreground">Appness</span>
+            <span className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full font-medium">V11</span>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {menuItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
-                >
-                  {item.label}
-                </a>
-              ))}
+          <div className="hidden md:flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium text-sm"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Search Bar (Desktop) */}
+          <div className="hidden lg:flex items-center">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Quick search..."
+                className="w-72 h-9 pl-3 pr-12 bg-muted border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center space-x-1">
+                <kbd className="px-1.5 py-0.5 text-xs bg-background border border-border rounded">⌘</kbd>
+                <kbd className="px-1.5 py-0.5 text-xs bg-background border border-border rounded">K</kbd>
+              </div>
             </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Contact Sales
+            <Button variant="ghost" size="sm">
+              Sign In
             </Button>
-            <Button variant="hero" size="sm">
-              Book a Demo
+            <Button variant="default" size="sm">
+              Get Started
             </Button>
           </div>
 
