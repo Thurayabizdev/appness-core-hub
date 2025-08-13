@@ -31,16 +31,17 @@ const HeroSection = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                Appness delivers tailored Odoo ERP, AI-powered workflows, analytics, and no-code tools for{" "}
-                <span className="font-semibold text-primary">29 industries</span> across{" "}
-                <span className="font-semibold text-primary">10 countries</span>.
+                Welcome to Appness Technology, your premium technology solutions provider. We offer cutting-edge ERP systems, AI/ML applications, data science and analytics, construction management tools, and intuitive no code/low code platforms.
+              </p>
+              <p className="text-base text-muted-foreground max-w-2xl">
+                Embark on your journey of Digital Transformation today!
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" className="group">
-                Book a Demo
+                Book Appointment
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
               </Button>
               <Button variant="outline" size="lg" className="group">

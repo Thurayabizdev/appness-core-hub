@@ -7,24 +7,25 @@ const ServicesOverview = () => {
     {
       icon: Settings,
       title: "ERP & Management Software",
+      subtitle: "Odoo Gold Partner",
       description: "Streamline business operations with Odoo-based ERP solutions tailored to your industry needs.",
       features: ["Inventory Management", "Financial Reporting", "CRM Integration", "Custom Workflows"]
     },
     {
       icon: Brain,
-      title: "AI, Machine Learning & Automation",
+      title: "Data Analytics and Automations",
       description: "Smarter processes and data-driven decisions through advanced AI and automation technologies.",
       features: ["Predictive Analytics", "Process Automation", "Intelligent Insights", "Machine Learning Models"]
     },
     {
       icon: Code,
-      title: "No-Code & Low-Code Platforms",
+      title: "No Code/Low Code Platforms",
       description: "Quick app development with Builder.ai integration for rapid digital transformation.",
       features: ["Rapid Prototyping", "Custom Applications", "API Integrations", "Scalable Solutions"]
     },
     {
       icon: Building,
-      title: "Construction Management Tools",
+      title: "Construction Management Systems",
       description: "Tailored solutions for construction projects with specialized tools and workflows.",
       features: ["Project Tracking", "Resource Management", "Quality Control", "Safety Compliance"]
     }
@@ -36,10 +37,10 @@ const ServicesOverview = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What We Do
+            Our Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive technology solutions designed to accelerate your business growth and digital transformation.
+            Appness Technology empowers businesses to leverage technology, optimize operations, and achieve their goals efficiently.
           </p>
         </div>
 
@@ -59,6 +60,9 @@ const ServicesOverview = () => {
                     </div>
                     <div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
+                      {service.subtitle && (
+                        <p className="text-sm text-primary font-medium">{service.subtitle}</p>
+                      )}
                     </div>
                   </div>
                 </CardHeader>
