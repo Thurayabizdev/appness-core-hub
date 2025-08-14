@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,15 +15,15 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
+    <nav className="fixed top-0 w-full glass border-b border-border/20 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-soft">
+            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
               <span className="text-white font-bold text-sm">A</span>
             </div>
-            <span className="text-xl font-semibold text-foreground">Appness</span>
+            <span className="text-xl font-semibold text-foreground font-display">Appness</span>
             <span className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full font-medium">V11</span>
           </div>
 
@@ -56,10 +57,11 @@ const Navigation = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Button variant="ghost" size="sm">
               Sign In
             </Button>
-            <Button variant="default" size="sm">
+            <Button variant="default" size="sm" className="bg-gradient-primary hover:opacity-90">
               Get Started
             </Button>
           </div>
