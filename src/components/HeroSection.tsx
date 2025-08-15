@@ -31,7 +31,7 @@ const HeroSection = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.04] tracking-tight">
                 <span className="text-foreground">Transform your business</span>
                 <br />
-                <span className="bg-gradient-to-r from-primary via-brand-secondary to-primary-glow bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-500 via-green-400 to-green-600 bg-clip-text text-transparent">
                   Together, We Grow
                 </span>
               </h1>
